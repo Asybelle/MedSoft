@@ -1,0 +1,5 @@
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Models\bin\Debug\Medsoft.Models.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Models\bin\Debug\Medsoft.Models.pdb
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Models\obj\Debug\Medsoft.Models.csprojResolveAssemblyReference.cache
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Models\obj\Debug\Medsoft.Models.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Models\obj\Debug\Medsoft.Models.pdb

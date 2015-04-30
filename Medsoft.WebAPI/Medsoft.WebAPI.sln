@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medsoft.Data", "Medsoft.Data\Medsoft.Data.csproj", "{17B90B5A-ABFC-45C9-B3BE-615208CEE6A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medsoft.API", "Medsoft.API\Medsoft.API.csproj", "{9B1B47D0-1E5C-4821-8AC9-83E22FBAEB36}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Medsoft.AzureCloudService", "Medsoft.AzureCloudService\Medsoft.AzureCloudService.ccproj", "{FA3C1EA3-3153-4696-931A-CA4641943062}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17B90B5A-ABFC-45C9-B3BE-615208CEE6A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B90B5A-ABFC-45C9-B3BE-615208CEE6A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B90B5A-ABFC-45C9-B3BE-615208CEE6A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B90B5A-ABFC-45C9-B3BE-615208CEE6A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1B47D0-1E5C-4821-8AC9-83E22FBAEB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1B47D0-1E5C-4821-8AC9-83E22FBAEB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1B47D0-1E5C-4821-8AC9-83E22FBAEB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1B47D0-1E5C-4821-8AC9-83E22FBAEB36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA3C1EA3-3153-4696-931A-CA4641943062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3C1EA3-3153-4696-931A-CA4641943062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3C1EA3-3153-4696-931A-CA4641943062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3C1EA3-3153-4696-931A-CA4641943062}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

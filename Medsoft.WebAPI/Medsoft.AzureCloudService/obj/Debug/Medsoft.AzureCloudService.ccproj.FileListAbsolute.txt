@@ -1,0 +1,2 @@
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.AzureCloudService\bin\Debug\ServiceConfiguration.cscfg
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.AzureCloudService\bin\Debug\ServiceDefinition.csdef

@@ -1,0 +1,10 @@
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\bin\Debug\Medsoft.Data.dll.config
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\bin\Debug\Medsoft.Data.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\bin\Debug\Medsoft.Data.pdb
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\bin\Debug\EntityFramework.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\bin\Debug\EntityFramework.xml
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\obj\Debug\Medsoft.Data.csprojResolveAssemblyReference.cache
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\obj\Debug\Medsoft.Data.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.Data\obj\Debug\Medsoft.Data.pdb

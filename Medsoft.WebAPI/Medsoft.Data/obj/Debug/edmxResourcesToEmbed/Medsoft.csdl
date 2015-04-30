@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedsoftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="Guid" Nullable="false" />
+    <Property Name="StreetName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StreetNumber" Type="Int32" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostalCode" Type="Int32" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patient_0" FromRole="Address" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Alarm">
+    <Key>
+      <PropertyRef Name="AlarmId" />
+    </Key>
+    <Property Name="AlarmId" Type="Guid" Nullable="false" />
+    <Property Name="AlarmName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AlarmDescription" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PulseMinValue" Type="Int32" />
+    <Property Name="PulseMaxValue" Type="Int32" />
+    <Property Name="TempMinValue" Type="Int32" />
+    <Property Name="TempMaxValue" Type="Int32" />
+    <Property Name="PersistanceDuration" Type="Int32" />
+    <Property Name="DoctorId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Doctor" Relationship="Self.FK_Alarm_0" FromRole="Alarm" ToRole="Doctor" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+    </Key>
+    <Property Name="DoctorId" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Function" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Alarms" Relationship="Self.FK_Alarm_0" FromRole="Doctor" ToRole="Alarm" />
+    <NavigationProperty Name="Identity" Relationship="Self.FK_Doctor_0" FromRole="Doctor" ToRole="Identity" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patient_2" FromRole="Doctor" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="Guid" Nullable="false" />
+    <Property Name="MedicalReportId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ActivityTrackings" Relationship="Self.FK_ActivityTracking_0" FromRole="History" ToRole="ActivityTracking" />
+    <NavigationProperty Name="MedicalReport" Relationship="Self.FK_History_0" FromRole="History" ToRole="MedicalReport" />
+  </EntityType>
+  <EntityType Name="Identity">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Doctors" Relationship="Self.FK_Doctor_0" FromRole="Identity" ToRole="Doctor" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patient_1" FromRole="Identity" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="MedicalReport">
+    <Key>
+      <PropertyRef Name="MedicalReportId" />
+    </Key>
+    <Property Name="MedicalReportId" Type="Guid" Nullable="false" />
+    <Property Name="Allergies" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Diagnostic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Histories" Relationship="Self.FK_History_0" FromRole="MedicalReport" ToRole="History" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patient_3" FromRole="MedicalReport" ToRole="Patient" />
+    <NavigationProperty Name="Recomandations" Relationship="Self.FK_Recomandation_0" FromRole="MedicalReport" ToRole="Recomandation" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CNP" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Preoffession" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AddressId" Type="Guid" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MedicalReportId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="DoctorId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="Self.FK_Patient_0" FromRole="Patient" ToRole="Address" />
+    <NavigationProperty Name="Doctor" Relationship="Self.FK_Patient_2" FromRole="Patient" ToRole="Doctor" />
+    <NavigationProperty Name="Identity" Relationship="Self.FK_Patient_1" FromRole="Patient" ToRole="Identity" />
+    <NavigationProperty Name="MedicalReport" Relationship="Self.FK_Patient_3" FromRole="Patient" ToRole="MedicalReport" />
+  </EntityType>
+  <EntityType Name="Recomandation">
+    <Key>
+      <PropertyRef Name="RecomandationId" />
+    </Key>
+    <Property Name="RecomandationId" Type="Guid" Nullable="false" />
+    <Property Name="RecomandationType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Duration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MedicalReportId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="MedicalReport" Relationship="Self.FK_Recomandation_0" FromRole="Recomandation" ToRole="MedicalReport" />
+  </EntityType>
+  <EntityType Name="ActivityTracking">
+    <Key>
+      <PropertyRef Name="PulseValue" />
+      <PropertyRef Name="Temperature" />
+      <PropertyRef Name="MeasurementDate" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="PulseValue" Type="Int32" Nullable="false" />
+    <Property Name="Temperature" Type="Int32" Nullable="false" />
+    <Property Name="MeasurementDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HistoryId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="History" Relationship="Self.FK_ActivityTracking_0" FromRole="ActivityTracking" ToRole="History" />
+  </EntityType>
+  <Association Name="FK_Patient_0">
+    <End Role="Address" Type="Self.Address" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Alarm_0">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Alarm" Type="Self.Alarm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="DoctorId" />
+      </Principal>
+      <Dependent Role="Alarm">
+        <PropertyRef Name="DoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctor_0">
+    <End Role="Identity" Type="Self.Identity" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Identity">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_2">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="DoctorId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="DoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityTracking_0">
+    <End Role="History" Type="Self.History" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ActivityTracking" Type="Self.ActivityTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="History">
+        <PropertyRef Name="HistoryId" />
+      </Principal>
+      <Dependent Role="ActivityTracking">
+        <PropertyRef Name="HistoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_History_0">
+    <End Role="MedicalReport" Type="Self.MedicalReport" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="History" Type="Self.History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalReport">
+        <PropertyRef Name="MedicalReportId" />
+      </Principal>
+      <Dependent Role="History">
+        <PropertyRef Name="MedicalReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_1">
+    <End Role="Identity" Type="Self.Identity" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Identity">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_3">
+    <End Role="MedicalReport" Type="Self.MedicalReport" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalReport">
+        <PropertyRef Name="MedicalReportId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="MedicalReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recomandation_0">
+    <End Role="MedicalReport" Type="Self.MedicalReport" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Recomandation" Type="Self.Recomandation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalReport">
+        <PropertyRef Name="MedicalReportId" />
+      </Principal>
+      <Dependent Role="Recomandation">
+        <PropertyRef Name="MedicalReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedsoftEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Self.Address" />
+    <EntitySet Name="Alarms" EntityType="Self.Alarm" />
+    <EntitySet Name="Doctors" EntityType="Self.Doctor" />
+    <EntitySet Name="Histories" EntityType="Self.History" />
+    <EntitySet Name="Identities" EntityType="Self.Identity" />
+    <EntitySet Name="MedicalReports" EntityType="Self.MedicalReport" />
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+    <EntitySet Name="Recomandations" EntityType="Self.Recomandation" />
+    <EntitySet Name="ActivityTrackings" EntityType="Self.ActivityTracking" />
+    <AssociationSet Name="FK_Patient_0" Association="Self.FK_Patient_0">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Alarm_0" Association="Self.FK_Alarm_0">
+      <End Role="Doctor" EntitySet="Doctors" />
+      <End Role="Alarm" EntitySet="Alarms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctor_0" Association="Self.FK_Doctor_0">
+      <End Role="Identity" EntitySet="Identities" />
+      <End Role="Doctor" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_2" Association="Self.FK_Patient_2">
+      <End Role="Doctor" EntitySet="Doctors" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityTracking_0" Association="Self.FK_ActivityTracking_0">
+      <End Role="History" EntitySet="Histories" />
+      <End Role="ActivityTracking" EntitySet="ActivityTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_History_0" Association="Self.FK_History_0">
+      <End Role="MedicalReport" EntitySet="MedicalReports" />
+      <End Role="History" EntitySet="Histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_1" Association="Self.FK_Patient_1">
+      <End Role="Identity" EntitySet="Identities" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_3" Association="Self.FK_Patient_3">
+      <End Role="MedicalReport" EntitySet="MedicalReports" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recomandation_0" Association="Self.FK_Recomandation_0">
+      <End Role="MedicalReport" EntitySet="MedicalReports" />
+      <End Role="Recomandation" EntitySet="Recomandations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

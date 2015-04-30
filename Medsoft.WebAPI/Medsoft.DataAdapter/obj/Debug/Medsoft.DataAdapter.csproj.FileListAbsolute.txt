@@ -1,0 +1,16 @@
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\obj\Debug\Medsoft.DataAdapter.csprojResolveAssemblyReference.cache
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\AutoMapper.Net4.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\Medsoft.DataAdapter.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\Medsoft.DataAdapter.pdb
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\AutoMapper.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\Medsoft.Data.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\Medsoft.Models.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\EntityFramework.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\Medsoft.Data.pdb
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\Medsoft.Models.pdb
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\AutoMapper.pdb
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\AutoMapper.xml
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\AutoMapper.Net4.pdb
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\bin\Debug\EntityFramework.xml
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\obj\Debug\Medsoft.DataAdapter.dll
+C:\Users\Ionica\Desktop\Medsoft.WebAPI\Medsoft.DataAdapter\obj\Debug\Medsoft.DataAdapter.pdb
